@@ -25,7 +25,9 @@ def isolate_number(string):
 #Take the list of h2 elements and run it through get_innerHTML to isolate the strings
 string_list = map(get_innerHTML, elements_list)
 
+#Take the string_list and get only a number out of applicable data
 number_list = map(isolate_number, string_list)
+
 #Print the array of numbers so I can see the data
 print number_list
 
