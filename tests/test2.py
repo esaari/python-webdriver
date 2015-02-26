@@ -13,19 +13,21 @@ elements_list = browser.find_elements_by_css_selector('#search-sub .hpads + h2')
 
 #Get the inner text of the <h2> elements returned in the selector
 def get_innerHTML(element):
-    print element
     return element.get_attribute('innerHTML')
 
 #Use a regex to strip out all non-numeric characters and replace them
 #with nothing, then cast to an integer.
 def isolate_number(string):
-    return int(re.sub(r'\D', "", string))
+    print string
+    #Handle the case where ad just displays 'seen today' or nothing at all
+    if string != "seen today" or string == "'&nbsp;":
+        return int(re.sub(r'\D', "", string))
 
 #Take the list of h2 elements and run it through get_innerHTML to isolate the strings
 string_list = map(get_innerHTML, elements_list)
-print string_list
 
 number_list = map(isolate_number, string_list)
+#Print the array of numbers so I can see the data
 print number_list
 
 #Assert that each number in our list is no more than 30 minutes old
