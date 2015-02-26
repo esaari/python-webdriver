@@ -18,7 +18,6 @@ def get_innerHTML(element):
 #Use a regex to strip out all non-numeric characters and replace them
 #with nothing, then cast to an integer.
 def isolate_number(string):
-    print string
     #Handle the case where ad just displays 'seen today' or nothing at all
     if string != "seen today" or string == "'&nbsp;":
         return int(re.sub(r'\D', "", string))
