@@ -19,7 +19,7 @@ def get_innerHTML(element):
 #with nothing, then cast to an integer.
 def isolate_number(string):
     #Handle the case where ad just displays 'seen today' or nothing at all
-    if string != "seen today" or string == "'&nbsp;":
+    if string != "seen today" or string == "&nbsp;":
         return int(re.sub(r'\D', "", string))
 
 #Take the list of h2 elements and run it through get_innerHTML to isolate the strings
