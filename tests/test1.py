@@ -25,7 +25,13 @@ for each_link in links:
 print duplicated_links_present()
 
 #Finally, assert there are no duplicate links present
-assert duplicated_links_present() == False
+try:
+    assert duplicated_links_present() == False
+except AssertionError:
+    print "Test failed: Looks like we might have some duplicate links"
+else:
+    print "Test passed: No duplicate links!"
+
 
 #Close the browser session
 browser.close()
