@@ -46,9 +46,11 @@ else:
 
 #Assert refreshing the page brings up a new set of links
 try:
+    #Refresh browser to pull up new links
     browser.refresh()
     refreshed_page_links = browser.find_elements_by_css_selector("fieldset #search-suggestions-box > a")
     refreshed_page_link_text = []
+
     for each_link in refreshed_page_links:
         refreshed_page_link_text.append(each_link.text)
     assert (link_text != refreshed_page_link_text) == True

@@ -39,9 +39,9 @@ for each_number in number_list:
         old_ad_count += 1
 
 if old_ad_count > 0:
-    print "Dang, we've got " + str(old_ad_count) + " old ad(s) on the home page"
+    print "Test failed: Dang, we've got " + str(old_ad_count) + " old ad(s) on the home page"
 else:
-    print "Hooray, no old ads!"
+    print "Test passed: Hooray, no old ads!"
 
 #Close the browser session
 browser.close()
