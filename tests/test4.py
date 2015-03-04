@@ -43,12 +43,13 @@ wait.until(
 )
 
 new_ad_url = browser.find_element_by_css_selector("#share-this-ad-hilight-" + str(creativeId)).get_attribute('value')
-image_thumbnail = browser.find_element_by_css_selector("#share-this-ad-hilight-" + str(creativeId) +
 
 try:
     assert (shared_ad_url == new_ad_url) == True
 except AssertionError:
-    print "Share this ad feature may not be working"
+    print "Share this ad feature for ad " + share_this_ad_link + " may not be working"
 else:
     print "Test Passed: Share this ad link worked and contains original ad"
 
+#Close the browser session
+browser.quit()
